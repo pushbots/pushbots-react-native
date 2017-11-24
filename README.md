@@ -34,7 +34,11 @@ Import **RCTPushbots** and Add PushbotsClient:
 
  * in `AppDelegate.m`:
 
-  
+ 	* Synthesize PushbotsClient
+ 
+ ```objc
+ @synthesize PushbotsClient = _PushbotsClient;
+ ```
 
     * On the `application didFinishLaunchingWithOptions` method, add the following code (replace APP_ID with your PushBots app ID):
 
