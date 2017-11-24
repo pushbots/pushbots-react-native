@@ -23,6 +23,15 @@
 
 #### Adding the Code
 
+ * in `AppDelegate.h`:
+Import **RCTPushbots** and Add PushbotsClient:
+
+```objc
+#import "RCTPushbots.h"
+.....
+@property (strong, nonatomic) RCTPushbots *PushbotsClient;
+```
+
  * in `AppDelegate.m`:
 
   
