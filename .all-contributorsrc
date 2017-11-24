@@ -1,0 +1,47 @@
+{
+  "projectName": "pushbots-react-native",
+  "projectOwner": "PushBots ",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 50,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "drmas",
+      "name": "Mohamed Shaban",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/644440?v=4",
+      "profile": "https://github.com/drmas",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "AbdullahDiaa",
+      "name": "Abdullah Diaa",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/733794?v=4",
+      "profile": "https://abdullahdiaa.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "meMuhammadkamal",
+      "name": "meMuhammadkamal",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14788993?v=4",
+      "profile": "https://github.com/meMuhammadkamal",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "amrsobhy",
+      "name": "amrsobhy",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6784122?v=4",
+      "profile": "http://amrsobhy.com",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ]
+}

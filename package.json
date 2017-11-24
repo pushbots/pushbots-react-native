@@ -1,0 +1,32 @@
+{
+  "name": "pushbots-react-native",
+  "version": "1.0.2-alpha",
+  "description": "PushBots React Native plugin",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pushbots",
+    "pushbot",
+    "push",
+    "notifications",
+    "react-plugin",
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "apns",
+    "gcm"
+  ],
+  "author": "PushBots <https://pushbots.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushbots/pushbots-react-native/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushbots/pushbots-react-native.git"
+  },
+  "homepage": "https://github.com/pushbots/pushbots-react-native#readme"
+}
