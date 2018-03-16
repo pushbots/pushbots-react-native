@@ -1,10 +1,17 @@
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+//Use UserNotifications with iOS 10+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+#define IOS10PLUS 1
+#import <UserNotifications/UserNotifications.h>
+#endif
 
 @class Pushbots;
 
 /*!
  @class
- PushBots SDK v2.0.6
+ PushBots SDK v2.1.1
  @abstract
  The primary interface for integrating PushBots with your app.
  
@@ -28,13 +35,14 @@
 typedef NS_ENUM(NSUInteger, PBLogLevel) {
     PBLogLevelNoLogging, PBLogLevelError, PBLogLevelWarn, PBLogLevelInfo, PBLogLevelVerbose
 };
-
++ (NSDictionary*) currentlyShowingNotification;
 + (NSString*)applicationId;
 + (NSString*)deviceId;
 + (BOOL) prompt;
++ (BOOL) receivedCallback;
 
-typedef void (^OSHandleNotificationActionBlock)(NSDictionary * result);
-typedef void (^OSHandleNotificationReceivedBlock)(NSDictionary* notification);
+typedef void (^PushBotsReceivedNotification)(NSDictionary * result);
+typedef void (^PushBotsOpenedNotification)(NSDictionary * result);
 /*!
  @method
  
@@ -42,14 +50,45 @@ typedef void (^OSHandleNotificationReceivedBlock)(NSDictionary* notification);
  Initializes an instance of the API.
  
  @discussion
+ Initializes an instance of the PushBots.
+
+ @param appId        Pushbots Application ID.
+ @param launchOptions   launchOptions
+ */
++(id)initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions;
+
+/*!
+ @method
+ 
+ @abstract
+ Initializes an instance of the API.
+ 
+ @discussion
+ Initializes an instance of the PushBots.
  
  @param appId        Pushbots Application ID.
- @param prompt
-
+ @param launchOptions   launchOptions
+ @param prompt      Push notification prompt on first app open.
+ 
  */
-+ (id)initWithAppId:(NSString*)appId;
-+ (id)initWithAppId:(NSString*)appId prompt:(BOOL)prompt;
-+ (id)initWithAppId:(NSString*)appId prompt:(BOOL)prompt handleNotificationAction:(OSHandleNotificationActionBlock)actionCallback;
++ (id)initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions prompt:(BOOL)prompt;
++ (id)initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions prompt:(BOOL)p receivedNotification:(PushBotsReceivedNotification)rCallback openedNotification:(PushBotsOpenedNotification)oCallback;
+
+/*!
+ @method
+ 
+ @abstract
+ Initializes an instance of the API.
+ 
+ @discussion
+ Initializes an instance of the PushBots.
+ 
+ @param appId        Pushbots Application ID.
+ @param launchOptions   launchOptions
+ @param p      Push notification prompt on first app open.
+ @param rCallback    block to access notification data on received.
+ */
++ (id)initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions prompt:(BOOL)p receivedNotification:(PushBotsReceivedNotification)rCallback;
 
 
 + (void)notificationReceived:(NSDictionary*)messageDict;
@@ -226,16 +265,18 @@ This method will toggle debug mode on the device, visit sandbox section in dashb
  */
 + (void) toggleNotifications:(BOOL)subscribed;
 
-/*!
- @method
- 
- @discussion
- This method will toggle Push notification subscription status.
- @param subscribed        badge count to substract.
- 
- */
 + (void) trackPushNotificationOpenedWithLaunchOptions:(NSDictionary *) launchOptions;
 + (void) trackPushNotificationOpenedWithPayload:(NSDictionary *) payload;
++ (void) trackPushNotificationOpenedWithPoll:(NSDictionary *) payload andAnswerId:(NSString *)ansewerID sync:(BOOL) sync;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunguarded-availability"
+#ifdef IOS10PLUS
+// iOS 10 only
+// Notification Service Extension
++ (UNMutableNotificationContent*)didReceiveNotificationExtensionRequest:(UNNotificationRequest*)request withContent:(UNMutableNotificationContent*)replacementContent;
++ (UNMutableNotificationContent*)serviceExtensionTimeWillExpireRequest:(UNNotificationRequest*)request withContent:(UNMutableNotificationContent*)replacementContent;
+#endif
+#pragma clang diagnostic pop
 
 @end

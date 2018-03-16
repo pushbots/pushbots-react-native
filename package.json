@@ -1,6 +1,6 @@
 {
   "name": "pushbots-react-native",
-  "version": "1.0.2-alpha",
+  "version": "1.0.3",
   "description": "PushBots React Native plugin",
   "main": "index",
   "scripts": {

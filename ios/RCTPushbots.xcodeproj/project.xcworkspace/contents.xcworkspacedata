@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Volumes/DATA/Projects/pushbots/sdks/pushbots-react-native/ios/RNPushbots.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

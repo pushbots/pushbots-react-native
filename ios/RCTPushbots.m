@@ -38,16 +38,18 @@ static RCTBridge *curRCTBridge;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions; {
+    NSLog(@"initWithAppId:");
+    return [self initWithAppId:appId withLaunchOptions:launchOptions prompt:NO];
+}
 
-
-- (id)initWithAppId:(NSString *)appId {
-    
-    [Pushbots initWithAppId:appId prompt:NO handleNotificationAction:^(NSDictionary *result) {
+- (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions prompt:(BOOL)prompt{
+    [Pushbots initWithAppId:appId withLaunchOptions:launchOptions prompt:prompt receivedNotification:^(NSDictionary *result) {
         [curRCTBridge.eventDispatcher sendAppEventWithName:@"Pushbots__RemoteNotificationReceived" body:result];
     }];
-    
     return self;
 }
+
 
 RCT_EXPORT_METHOD(setAlias:(NSString *)alias)
 {

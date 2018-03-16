@@ -9,6 +9,6 @@
 #import "Pushbots.h"
 
 @interface RCTPushbots : NSObject <RCTBridgeModule>
-- (id) initWithAppId:(NSString*)appId prompt:(BOOL)prompt;
-+ (void)didReceiveRemoteNotification:(NSDictionary *)dictionary;
+- (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions;
+- (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions prompt:(BOOL)prompt;
 @end

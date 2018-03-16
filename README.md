@@ -23,8 +23,7 @@
 
 #### Adding the Code
 
- * in `AppDelegate.h`:
-Import **RCTPushbots** and Add PushbotsClient:
+* Open `AppDelegate.h` Import **RCTPushbots** and Add **PushbotsClient**
 
 ```objc
 #import "RCTPushbots.h"
@@ -32,28 +31,16 @@ Import **RCTPushbots** and Add PushbotsClient:
 @property (strong, nonatomic) RCTPushbots *PushbotsClient;
 ```
 
- * in `AppDelegate.m`:
+ * Open `AppDelegate.m`: Add PushBots code to `application:didFinishLaunchingWithOptions` method (replace APP_ID with your PushBots app ID):
 
- 	* Synthesize PushbotsClient
- 
- ```objc
- @synthesize PushbotsClient = _PushbotsClient;
- ```
-
-    * On the `application didFinishLaunchingWithOptions` method, add the following code (replace APP_ID with your PushBots app ID):
-
-       Add this line to **didFinishLaunchingWithOptions**:
 ```objc
  self.PushbotsClient = [[RCTPushbots alloc] initWithAppId:@"APP_ID"];
 ```
 
- * Voila!
-
-
 ### Android
 
-Go to `build.gradle`  app level and add this in default config
-Add the following to defaultConfig in `build.gradle` file inside the android/app folder
+Go to `android/app/build.gradle` app level and add this in default config
+Add the following to **defaultConfig** in `build.gradle` file inside the android/app folder
 
 ```gradle
 defaultConfig {
@@ -65,6 +52,31 @@ defaultConfig {
   }
 ```
 
+Update **buildToolsVersion** and **compileSdkVersion** to 27
+```gradle
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+	....
+}
+```
+
+Update `com.android.support` to 27 in **dependencies**
+
+```gradle
+dependencies {
+    ...
+    compile "com.android.support:appcompat-v7:27.1.0"
+    ..
+}
+```
+Open `android/build.gradle`, Add google repo
+```gradle
+allprojects {
+    repositories {
+        ...
+		maven { url 'https://maven.google.com' }
+```
 
 ### Usage
 
@@ -72,6 +84,9 @@ in your App.js:
 
 
 ```javascript
+import {
+  Alert
+} from 'react-native';
 
 import Pushbots from 'pushbots-react-native'
 
