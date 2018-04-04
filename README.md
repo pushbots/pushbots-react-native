@@ -23,11 +23,16 @@
 
 #### Adding the Code
 
-* Open `AppDelegate.h` Import **RCTPushbots** and Add **PushbotsClient**
+* Open `AppDelegate.h` Import **RCTPushbots**:
 
 ```objc
 #import "RCTPushbots.h"
-.....
+```
+
+
+* The add PushbotsClient propery below `@property (nonatomic, strong) UIWindow *window;`
+
+```objc
 @property (strong, nonatomic) RCTPushbots *PushbotsClient;
 ```
 
