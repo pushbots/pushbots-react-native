@@ -34,7 +34,7 @@
  * Open `AppDelegate.m`: Add PushBots code to `application:didFinishLaunchingWithOptions` method (replace APP_ID with your PushBots app ID):
 
 ```objc
- self.PushbotsClient = [[RCTPushbots alloc] initWithAppId:@"APP_ID"];
+ self.PushbotsClient = [[RCTPushbots alloc] initWithAppId:@"APP_ID" withLaunchOptions:launchOptions];
 ```
 
 ### Android
