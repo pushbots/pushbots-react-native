@@ -54,6 +54,10 @@ export default class Pushbots {
 		RNPushbotsModule.setTag(tag)
 	}
 
+	static trackEvent(event_key){
+		RNPushbotsModule.trackEvent(event_key)
+	}
+	
 	static removeTag(tag){
 		RNPushbotsModule.removeTag(tag)
 	}

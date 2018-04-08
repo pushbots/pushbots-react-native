@@ -69,6 +69,10 @@ RCT_EXPORT_METHOD(removeTag:(NSString *)tag)
 {
     [Pushbots untag:@[tag]];
 }
+RCT_EXPORT_METHOD(trackEvent:(NSString *)event_key)
+{
+    [Pushbots trackEvent:event_key];
+}
 RCT_EXPORT_METHOD(setBadge:(int )count)
 {
     [Pushbots setBadge:count];

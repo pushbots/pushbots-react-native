@@ -49,6 +49,13 @@ public class RNPushbotsModule extends ReactContextBaseJavaModule {
    }
 
    @ReactMethod
+   public void trackEvent(String event_key){
+       if(value != null && !value.isEmpty()){
+           Pushbots.sharedInstance().trackEvent(event_key);
+       }
+   }
+   
+   @ReactMethod
    public void debug(Boolean value){
        if(value == null){
            value = false;

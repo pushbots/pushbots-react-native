@@ -11,7 +11,7 @@
 
 /*!
  @class
- PushBots SDK v2.1.1
+ PushBots SDK v2.1.2
  @abstract
  The primary interface for integrating PushBots with your app.
  
@@ -268,6 +268,9 @@ This method will toggle debug mode on the device, visit sandbox section in dashb
 + (void) trackPushNotificationOpenedWithLaunchOptions:(NSDictionary *) launchOptions;
 + (void) trackPushNotificationOpenedWithPayload:(NSDictionary *) payload;
 + (void) trackPushNotificationOpenedWithPoll:(NSDictionary *) payload andAnswerId:(NSString *)ansewerID sync:(BOOL) sync;
+
++(void) trackEvent:(NSString *)event;
++(void) trackEvent:(NSString *)event withValue:(NSString *)value;
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunguarded-availability"
