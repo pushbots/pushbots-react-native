@@ -8,6 +8,7 @@
 ## Getting started
 
 `npm install pushbots-react-native --save`
+`npm install`
 
 ## Automatic Installation
 `react-native link pushbots-react-native`
