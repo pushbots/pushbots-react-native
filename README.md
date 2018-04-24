@@ -7,8 +7,7 @@
 > React Native Library for PushBots Push Notifications Service
 ## Getting started
 
-`npm install pushbots-react-native --save`
-`npm install`
+`npm install pushbots-react-native --save && npm install`
 
 ## Automatic Installation
 `react-native link pushbots-react-native`
@@ -76,7 +75,7 @@ dependencies {
     ..
 }
 ```
-Open `android/build.gradle`, Add google repo to **allprojects**
+Open `android/build.gradle`, Add google repo to **allprojects** in **maven** section
 ```gradle
 allprojects {
     repositories {
