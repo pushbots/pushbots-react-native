@@ -75,7 +75,7 @@ dependencies {
     ..
 }
 ```
-Open `android/build.gradle`, Add google repo
+Open `android/build.gradle`, Add google repo to **allprojects**
 ```gradle
 allprojects {
     repositories {
