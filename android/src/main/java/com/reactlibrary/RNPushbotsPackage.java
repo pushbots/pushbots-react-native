@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.pushbots.reactNative;
 
 import java.util.Arrays;
 import java.util.Collections;

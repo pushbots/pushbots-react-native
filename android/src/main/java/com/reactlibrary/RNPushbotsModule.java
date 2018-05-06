@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.pushbots.reactNative;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
