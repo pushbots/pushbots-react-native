@@ -1,8 +1,8 @@
 # pushbots-react-native
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
-[![Twitter Follow](https://img.shields.io/twitter/follow/pushbots.svg?style=social&label=Follow&style=plastic)](https://twitter.com/pushbots)
-[![npm](https://img.shields.io/npm/dw/localeval.svg)](https://www.npmjs.com/package/pushbots-react-native)
+[![Twitter Follow](https://img.shields.io/twitter/follow/pushbots.png?style=social&label=Follow&style=plastic)](https://twitter.com/pushbots)
+[![npm](https://img.shields.io/npm/dw/localeval.png)](https://www.npmjs.com/package/pushbots-react-native)
 
 > React Native Library for PushBots Push Notifications Service
 ## Getting started
@@ -97,7 +97,6 @@ import Pushbots from 'pushbots-react-native'
 
 Pushbots.registerForRemoteNotifications()
 
-//events work with iOS only in this version. 
 export default class App extends Component<{}> {
 	componentWillMount() {
 		Pushbots.addEventListener('received', this.onReceived);
