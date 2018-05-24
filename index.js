@@ -24,6 +24,13 @@ export default class Pushbots {
 					handler(notification);
 				}
 			);
+		}else if (type === 'opened') {			
+			listener = NativeAppEventEmitter.addListener(
+				'Pushbots__RemoteNotificationOpened',
+				(notification) => {
+					handler(notification);
+				}
+			);
 		}
 		not_handlers.set(type, listener);
 	}

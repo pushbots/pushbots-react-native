@@ -100,14 +100,17 @@ Pushbots.registerForRemoteNotifications()
 //events work with iOS only in this version. 
 export default class App extends Component<{}> {
 	componentWillMount() {
-		console.log("Adding listener");
 		Pushbots.addEventListener('received', this.onReceived);
+		Pushbots.addEventListener('opened', this.onOpened);
 	}
 	componentWillUnmount() {
 		Pushbots.removeEventListener('received', this.onReceived);
-	}
+		Pushbots.removeEventListener('opened', this.onOpened);	}
 	onReceived(notification) {
-		Alert.alert( 'Alert Title', JSON.stringify(notification), [ {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')}, {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}, {text: 'OK', onPress: () => console.log('OK Pressed')}, ], { cancelable: false } )
+		Alert.alert( 'Received Notification', JSON.stringify(notification), [ {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')}, {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}, {text: 'OK', onPress: () => console.log('OK Pressed')}, ], { cancelable: false } )
+	}
+	onOpened(notification) {
+		Alert.alert( 'Opened Notification', JSON.stringify(notification), [ {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')}, {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}, {text: 'OK', onPress: () => console.log('OK Pressed')}, ], { cancelable: false } )
 	}
 }
 
