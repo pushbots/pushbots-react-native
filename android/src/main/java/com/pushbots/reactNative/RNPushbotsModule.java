@@ -84,7 +84,49 @@ public class RNPushbotsModule extends ReactContextBaseJavaModule {
 			Pushbots.sharedInstance().trackEvent(value);
 		}
 	}
+
+	@ReactMethod
+	public void setEmail(String value){
+		if(value != null && !value.isEmpty()){
+			Pushbots.sharedInstance().setEmail(value);
+		}
+	}
+
+	@ReactMethod
+	public void setPhone(String value){
+		if(value != null && !value.isEmpty()){
+			Pushbots.sharedInstance().setPhone(value);
+		}
+	}
+
+	@ReactMethod
+	public void setGender(String value){
+		if(value != null && !value.isEmpty()){
+			Pushbots.sharedInstance().setGender(value);
+		}
+	}
+
+	@ReactMethod
+	public void setName(String value){
+		if(value != null && !value.isEmpty()){
+			Pushbots.sharedInstance().setName(value);
+		}
+	}
+
+	@ReactMethod
+	public void setFirstName(String value){
+		if(value != null && !value.isEmpty()){
+			Pushbots.sharedInstance().setFirstName(value);
+		}
+	}
    
+	@ReactMethod
+	public void setLastName(String value){
+		if(value != null && !value.isEmpty()){
+			Pushbots.sharedInstance().setLastName(value);
+		}
+	}
+
 	@ReactMethod
 	public void debug(Boolean value){
 		if(value == null){

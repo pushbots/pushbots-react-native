@@ -65,6 +65,30 @@ export default class Pushbots {
 		RNPushbotsModule.trackEvent(event_key)
 	}
 	
+	static setName(name){
+		RNPushbotsModule.setName(name)
+	}
+
+	static setFirstName(first_name){
+		RNPushbotsModule.setFirstName(first_name)
+	}
+
+	static setLastName(last_name){
+		RNPushbotsModule.setLastName(last_name)
+	}
+
+	static setEmail(email){
+		RNPushbotsModule.setEmail(email)
+	}
+
+	static setGender(gender){
+		RNPushbotsModule.setGender(gender)
+	}
+
+	static setPhone(phone){
+		RNPushbotsModule.setPhone(phone)
+	}
+
 	static removeTag(tag){
 		RNPushbotsModule.removeTag(tag)
 	}
