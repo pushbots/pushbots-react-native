@@ -1,4 +1,5 @@
-import { NativeModules, NativeAppEventEmitter, NetInfo, Platform } from 'react-native';
+import NetInfo from "@react-native-community/netinfo";
+import { NativeModules, NativeAppEventEmitter, Platform } from 'react-native';
 
 const RNPushbotsModule = NativeModules.Pushbots;
 
