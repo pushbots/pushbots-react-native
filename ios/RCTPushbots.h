@@ -4,9 +4,12 @@
 #import "RCTBridgeModule.h"
 #endif
 
-
 #import <UIKit/UIKit.h>
+#if __has_include(<Pushbots/Pushbots.h>)
+#import <Pushbots/Pushbots.h>
+#else
 #import "Pushbots.h"
+#endif
 
 @interface RCTPushbots : NSObject <RCTBridgeModule>
 - (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions;
