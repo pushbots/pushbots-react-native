@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+	package
+		ADDED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:2:11-45
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+		ADDED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+		ADDED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:1-4:12
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+		ADDED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+		ADDED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml
+		INJECTED from /media/ibrahim/9E6DB74EB41E85C9/projects/pushbots-projects/react-native/pushbots-react-native/android/src/main/AndroidManifest.xml

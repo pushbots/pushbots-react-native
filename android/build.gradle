@@ -1,6 +1,8 @@
 buildscript {
 	repositories {
-		jcenter()
+		google()
+        jcenter()
+        maven { url 'https://maven.google.com' }
 	}
 
 	dependencies {
@@ -31,6 +33,6 @@ repositories {
 dependencies {
 	implementation 'com.facebook.react:react-native:+'
 	implementation 'com.google.firebase:firebase-messaging:17.0.0'
-	implementation 'com.pushbots:pushbots-lib:3.3.0-beta10@aar'
+	implementation 'com.pushbots:pushbots-lib:3.3.0-beta11@aar'
 	api 'com.google.android.gms:play-services-location:15.0.1'
 }
