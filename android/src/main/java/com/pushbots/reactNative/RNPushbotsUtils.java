@@ -9,6 +9,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.bridge.WritableNativeMap;
 import android.util.Log;
+import com.pushbots.push.Pushbots;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -155,6 +156,24 @@ public final class RNPushbotsUtils {
 
 			return result;
 		}
+
+	 static Pushbots.LOG_LEVEL getLogLevel(String logLevel) {
+		if (logLevel.equals("DEBUG")){
+			return Pushbots.LOG_LEVEL.DEBUG;
+		}else if (logLevel.equals("VERBOSE")){
+			return Pushbots.LOG_LEVEL.VERBOSE;
+		}else if (logLevel.equals("INFO")) {
+			return Pushbots.LOG_LEVEL.INFO;
+		}else if (logLevel.equals("WARNING")) {
+			return Pushbots.LOG_LEVEL.WARNING;
+		}else if (logLevel.equals("ERROR")) {
+			return Pushbots.LOG_LEVEL.ERROR;
+		}else if (logLevel.equals("WTF")) {
+			return Pushbots.LOG_LEVEL.WTF;
+		}else {
+			return Pushbots.LOG_LEVEL.NONE;
+		}
+	}
 		
 	
 }

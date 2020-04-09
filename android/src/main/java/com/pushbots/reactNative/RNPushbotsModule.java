@@ -9,7 +9,6 @@ import android.content.Intent;
 import com.facebook.react.bridge.ReactContext;
 import android.util.Log;
 import android.content.BroadcastReceiver;
-import com.pushbots.push.utils.PBConstants;
 import android.os.Bundle;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.bridge.WritableMap;
@@ -44,6 +43,31 @@ public class RNPushbotsModule extends ReactContextBaseJavaModule {
 			.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
 			.emit(event, params);
 	}
+
+	@ReactMethod
+	public void setLogLevel(String logcatLevel, String uiLevel) {
+		Pushbots.setLogLevel(RNPushbotsUtils.getLogLevel(logcatLevel), RNPushbotsUtils.getLogLevel(uiLevel));
+	}
+
+	@ReactMethod
+	public void shareLocation(boolean isTrack) {
+		Pushbots.shareLocation(isTrack);
+	}
+
+	@ReactMethod
+	public boolean isInitialized(){
+		return Pushbots.isInitialized();
+	}
+
+	@ReactMethod
+	public boolean isRegistered(){
+		return Pushbots.isRegistered();
+	}
+
+	//@ReactMethod
+	//public boolean isSharingLocation(){
+	//	return Pushbots.isSharingLocation();
+	//}
   
 	@ReactMethod
 	public void registerForRemoteNotifications(){
