@@ -60,30 +60,13 @@ defaultConfig {
   }
 ```
 
-Update **buildToolsVersion** and **compileSdkVersion** to 27
+make sure **buildToolsVersion** and **compileSdkVersion** are set to at least 27:
 ```gradle
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
 	....
 }
-```
-
-Update `com.android.support` to 27 in **dependencies**
-
-```gradle
-dependencies {
-    ...
-    compile "com.android.support:appcompat-v7:27.1.0"
-    ..
-}
-```
-Open `android/build.gradle`, Add google repo to **allprojects** in **maven** section
-```gradle
-allprojects {
-    repositories {
-        ...
-		maven { url 'https://maven.google.com' }
 ```
 
 ### Usage
