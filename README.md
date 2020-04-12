@@ -9,9 +9,6 @@
 
 `npm install pushbots-react-native --save && npm install`
 
-## React native 0.60+
-`npm install --save @react-native-community/netinfo`
-
 run `pod install` in ios folder:
 `cd ios && pod install`
 
