@@ -11,8 +11,7 @@ Pod::Spec.new do |s|
   s.source         = { :git => "#{package_json["repository"]["url"]}.git", :tag => "#{s.version}" }
   s.source_files   = 'ios/RCTPushbots.{h,m}'
   s.static_framework = true  
-  s.platform       = :ios, "9.0"
+  s.platform       = :ios, "10.0"
   s.dependency 'React',  '>= 0.13.0', '< 1.0.0'
-  s.dependency 'react-native-netinfo', '4.2.2'
   s.dependency 'Pushbots', '2.4.3'
 end
