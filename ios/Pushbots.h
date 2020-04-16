@@ -11,7 +11,7 @@
 
 /*!
  @class
- PushBots SDK v2.1.2
+ PushBots SDK v2.5.0
  @abstract
  The primary interface for integrating PushBots with your app.
  
@@ -43,6 +43,11 @@ typedef NS_ENUM(NSUInteger, PBLogLevel) {
 
 typedef void (^PushBotsReceivedNotification)(NSDictionary * result);
 typedef void (^PushBotsOpenedNotification)(NSDictionary * result);
+typedef void (^PushBotsRegistered)(NSString * userid);
+
++ (void) onRegistered:(PushBotsRegistered)rCallback;
+
+
 /*!
  @method
  
@@ -103,7 +108,7 @@ typedef void (^PushBotsOpenedNotification)(NSDictionary * result);
  
  */
 + (void)setLogLevel:(PBLogLevel)pbloglevel;
-
++ (void)setLogLevel:(PBLogLevel)pbloglevel isUILog:(BOOL)uiLog;
 /*!
  @method
  
@@ -138,6 +143,8 @@ Show prompt to register with remote notifications.
  @param callback         callback block to get device data as NSDictionary
  */
 + (void) getDevice:(void (^)(NSDictionary *device, NSError *error))callback;
++ (void) checkInApp:(void (^)(NSArray *inappmessages, NSError *error))callback;
++(void) inAppNotificationOpenedWithId:(NSString *) inapp_id;
 
 /*!
  @method
@@ -182,6 +189,14 @@ This method will toggle debug mode on the device, visit sandbox section in dashb
  @param alias         device alias.
  */
 + (void) setAlias:(NSString *)alias;
+
++ (void) setName:(NSString *)name;
++ (void) setFirstName:(NSString *)f_name;
++ (void) setLastName:(NSString *)l_name;
++ (void) setEmail:(NSString *)email;
++ (void) setGender:(NSString *)gender;
++ (void) setPhone:(NSString *)phone;
+
 
 
 /*!
@@ -264,6 +279,9 @@ This method will toggle debug mode on the device, visit sandbox section in dashb
 
  */
 + (void) toggleNotifications:(BOOL)subscribed;
++ (BOOL)showTakeoverNotificationWithObject:(NSDictionary *) notification;
++ (void)showTakeoverNotificationWith:(NSDictionary *) notification;
++ (BOOL) validateInAppMessage:(NSDictionary *) message;
 
 + (void) trackPushNotificationOpenedWithLaunchOptions:(NSDictionary *) launchOptions;
 + (void) trackPushNotificationOpenedWithPayload:(NSDictionary *) payload;
@@ -271,7 +289,8 @@ This method will toggle debug mode on the device, visit sandbox section in dashb
 
 +(void) trackEvent:(NSString *)event;
 +(void) trackEvent:(NSString *)event withValue:(NSString *)value;
-
++(void) shareLocation:(BOOL)isSharingEnabled;
++(void) shareLocationPrompt:(BOOL)isPrompt;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunguarded-availability"
 #ifdef IOS10PLUS
@@ -279,6 +298,7 @@ This method will toggle debug mode on the device, visit sandbox section in dashb
 // Notification Service Extension
 + (UNMutableNotificationContent*)didReceiveNotificationExtensionRequest:(UNNotificationRequest*)request withContent:(UNMutableNotificationContent*)replacementContent;
 + (UNMutableNotificationContent*)serviceExtensionTimeWillExpireRequest:(UNNotificationRequest*)request withContent:(UNMutableNotificationContent*)replacementContent;
+
 #endif
 #pragma clang diagnostic pop
 
