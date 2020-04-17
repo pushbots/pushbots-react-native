@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.static_framework = true  
   s.platform       = :ios, "10.0"
   s.dependency 'React',  '>= 0.13.0', '< 1.0.0'
-  s.vendored_frameworks = 'Pushbots.framework'
+  s.vendored_frameworks = 'ios/Pushbots.framework'
 end
