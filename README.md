@@ -75,10 +75,11 @@ in your App.js:
 
 
 ```javascript
-import { Text, Alert } from 'react-native';
+import { Text} from 'react-native';
 import React, { Component } from 'react';
-
 import Pushbots from 'pushbots-react-native'
+
+
 Pushbots.registerForRemoteNotifications()
 export default class App extends Component {
     constructor(properties) {
@@ -91,10 +92,10 @@ export default class App extends Component {
         Pushbots.removeEventListener('opened', this.onOpened);    }
         
     onReceived(notification) {
-        Alert.alert( 'Received Notification', JSON.stringify(notification), [ {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')}, {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}, {text: 'OK', onPress: () => console.log('OK Pressed')}, ], { cancelable: false } )
+        console.log('Received Notification: ', notification);
     }
     onOpened(notification) {
-        Alert.alert( 'Opened Notification', JSON.stringify(notification), [ {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')}, {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}, {text: 'OK', onPress: () => console.log('OK Pressed')}, ], { cancelable: false } )
+        console.log('Opened Notification: ', notification);
     }
     render() {
         return (
