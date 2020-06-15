@@ -10,8 +10,10 @@
 #else
 #import "Pushbots.h"
 #endif
-
-@interface RCTPushbots : NSObject <RCTBridgeModule>
+#import <React/RCTEventEmitter.h>
+@import WebKit;
+@import CoreTelephony;
+@interface RCTPushbots : RCTEventEmitter <RCTBridgeModule>
 - (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions;
 - (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions prompt:(BOOL)prompt;
 @end

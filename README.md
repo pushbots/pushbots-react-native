@@ -75,29 +75,35 @@ in your App.js:
 
 
 ```javascript
-import {
-  Alert
-} from 'react-native';
-
+import { Text} from 'react-native';
+import React, { Component } from 'react';
 import Pushbots from 'pushbots-react-native'
 
-Pushbots.registerForRemoteNotifications()
 
-export default class App extends Component<{}> {
-	componentWillMount() {
-		Pushbots.addEventListener('received', this.onReceived);
-		Pushbots.addEventListener('opened', this.onOpened);
-	}
-	componentWillUnmount() {
-		Pushbots.removeEventListener('received', this.onReceived);
-		Pushbots.removeEventListener('opened', this.onOpened);	}
-	onReceived(notification) {
-		Alert.alert( 'Received Notification', JSON.stringify(notification), [ {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')}, {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}, {text: 'OK', onPress: () => console.log('OK Pressed')}, ], { cancelable: false } )
-	}
-	onOpened(notification) {
-		Alert.alert( 'Opened Notification', JSON.stringify(notification), [ {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')}, {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}, {text: 'OK', onPress: () => console.log('OK Pressed')}, ], { cancelable: false } )
-	}
+Pushbots.registerForRemoteNotifications()
+export default class App extends Component {
+    constructor(properties) {
+        super(properties);
+        Pushbots.addEventListener('received', this.onReceived);
+        Pushbots.addEventListener('opened', this.onOpened);
+      }
+    componentWillUnmount() {
+        Pushbots.removeEventListener('received', this.onReceived);
+        Pushbots.removeEventListener('opened', this.onOpened);    }
+        
+    onReceived(notification) {
+        console.log('Received Notification: ', notification);
+    }
+    onOpened(notification) {
+        console.log('Opened Notification: ', notification);
+    }
+    render() {
+        return (
+              <Text>Hello From Pushbots</Text>
+            );
+    }
 }
+
 
 ```
 

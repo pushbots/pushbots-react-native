@@ -1,22 +1,23 @@
-import { NativeModules, NativeAppEventEmitter, Platform } from 'react-native';
+import { NativeModules, NativeEventEmitter, Platform } from 'react-native';
 
 const RNPushbotsModule = NativeModules.Pushbots;
 
 const not_handlers = new Map();
+const eventEmitter = new NativeEventEmitter(RNPushbotsModule);
 
 
 export default class Pushbots {
 	static addEventListener(type: any, handler: Function) {
 		var listener;
 		if (type === 'received') {			
-			listener = NativeAppEventEmitter.addListener(
+			listener = eventEmitter.addListener(
 				'Pushbots__RemoteNotificationReceived',
 				(notification) => {
 					handler(notification);
 				}
 			);
 		}else if (type === 'opened') {			
-			listener = NativeAppEventEmitter.addListener(
+			listener = eventEmitter.addListener(
 				'Pushbots__RemoteNotificationOpened',
 				(notification) => {
 					handler(notification);

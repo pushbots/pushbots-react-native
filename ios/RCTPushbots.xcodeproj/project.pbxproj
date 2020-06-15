@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BA89F5B4205BDE6D00ABDE84 /* libRCTPushbots.a in Copy Files */ = {isa = PBXBuildFile; fileRef = 134814201AA4EA6300B7C361 /* libRCTPushbots.a */; };
-		BA89F5C8205BE0B000ABDE84 /* libPushbots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA89F5C7205BE0B000ABDE84 /* libPushbots.a */; };
 		BA902CEF1FBDB18600574058 /* RCTPushbots.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RCTPushbots.m */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		B3E7B5881CC2AC0600A0062D /* RCTPushbots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTPushbots.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RCTPushbots.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTPushbots.m; sourceTree = "<group>"; };
 		BA89F5B7205BDE9D00ABDE84 /* Pushbots.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pushbots.h; sourceTree = "<group>"; };
-		BA89F5C7205BE0B000ABDE84 /* libPushbots.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPushbots.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA89F5C8205BE0B000ABDE84 /* libPushbots.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,13 +51,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		52B07AD62448DD3A000EF4B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				BA89F5C7205BE0B000ABDE84 /* libPushbots.a */,
 				BA89F5B7205BDE9D00ABDE84 /* Pushbots.h */,
 				B3E7B5881CC2AC0600A0062D /* RCTPushbots.h */,
 				B3E7B5891CC2AC0600A0062D /* RCTPushbots.m */,
+				52B07AD62448DD3A000EF4B8 /* Frameworks */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +108,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;

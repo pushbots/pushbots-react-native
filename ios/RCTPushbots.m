@@ -23,19 +23,22 @@
 
 @implementation RCTPushbots
 
-@synthesize bridge = _bridge;
-
 RCT_EXPORT_MODULE()
-
-static RCTBridge *curRCTBridge;
-
-- (void)setBridge:(RCTBridge *)receivedBridge {
-    _bridge = receivedBridge;
-    curRCTBridge = receivedBridge;
-}
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
++ (instancetype)alloc{
+    static RCTPushbots *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [super allocWithZone:nil];
+    });
+    return sharedInstance;
+}
+- (NSArray<NSString *> *)supportedEvents
+{
+    return @[@"Pushbots__RemoteNotificationReceived", @"Pushbots__RemoteNotificationOpened"];
 }
 
 - (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions; {
@@ -45,7 +48,11 @@ static RCTBridge *curRCTBridge;
 
 - (id) initWithAppId:(NSString*)appId withLaunchOptions:(NSDictionary *)launchOptions prompt:(BOOL)prompt{
     [Pushbots initWithAppId:appId withLaunchOptions:launchOptions prompt:prompt receivedNotification:^(NSDictionary *result) {
-        [curRCTBridge.eventDispatcher sendAppEventWithName:@"Pushbots__RemoteNotificationReceived" body:result];
+        [self sendEventWithName:@"Pushbots__RemoteNotificationReceived" body: result];
+        
+    } openedNotification:^(NSDictionary *result) {
+        [self sendEventWithName:@"Pushbots__RemoteNotificationOpened" body: result];
+        
     }];
     return self;
 }
@@ -96,8 +103,7 @@ RCT_EXPORT_METHOD(toggleNotifications:(BOOL*)toggle)
 
 RCT_EXPORT_METHOD(registerForRemoteNotifications)
 {
-    [Pushbots registerForRemoteNotifications];
-    curRCTBridge = self.bridge;
+    
 }
 
 
